@@ -1,0 +1,2 @@
+2572	access.log
+du: cannot access 'qaqtxt': No such file or directory

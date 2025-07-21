@@ -1,0 +1,97 @@
+echo "${BASH_VERSION}"
+# shows top 10 rows of text file
+head -n 10 ./romeo.txt
+
+#shows last 10 rows
+tail  10 ./romeo.txt 
+
+
+# less  allows us to read large files
+less ./romeo.txt 
+	# f scroll on next page
+	# 50p 	scrolls 50% of our concepts
+	-N #shows numbers od rows
+	/ # search from xurrent position
+        ? # search vereywhere
+	q # quit
+
+#word counts on a file
+wc 
+	-l 	#number of lines
+	-w	#number of words
+	-c 	#count number of bytes (=8 bit ASCII-characters)
+
+#disk usage
+#du shows disk usage of the current directory and we also can pass parameter to diferent path
+
+du 
+	-h #hunab readable
+
+#Write output to a file
+>
+ #example
+	echo "hello bash" > output.txt
+
+# appand to a file
+	# if file exist operator should append text
+	# if file doesn't extist it should create
+>>
+  #example
+	echo 'Bash is amazing' >> file.txt
+	
+#redirect standart error
+#example
+	ls qaq.txt 2> error.txt 
+#ignor error message 
+# redirect them to /dev/null
+
+du -h image.jpg 2> /dev/null
+
+# redirect stdout and stderr to one file
+du -h img-2233.jpg no-image.jpg 1>> out.txt 2>> out.txt
+#or
+	du -h img-2233.jp no-image.jpg > out.txt 2>&1
+
+#stdin
+#standard input
+	<
+#exmaple
+	wc -l < ./romeo.txt
+	
+
+#tee
+#Copy standard input to each FILE, and also to standard output.
+example
+	echo "hello world" | tee file.txt
+
+# cut
+#Usage: cut OPTION... [FILE]...
+#Print selected parts of lines from each FILE to standard output.
+
+#With no FILE, or when FILE is -, read standard input.
+
+cut ./access.log -d ' ' -f 7| sort | uniq
+
+
+
+#watch
+watch -n 0.5 grep ctxt /proc/12345/status
+
+# processes
+ps aux
+
+#niceness priority for processes
+#nice -n (-20 - 19 )programm_name lower value has more priorty
+nice -n 19 gedit
+
+
+renice -n 19 [procces id]
+
+
+
+
+#pgrep
+#pgrep finds process id
+pgrep firefox
+#
+pgrep -f firefox # shows sub processes

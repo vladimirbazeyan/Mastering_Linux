@@ -1,0 +1,2 @@
+168K	romeo.txt
+du: cannot access 'qaq.txt': No such file or directory
