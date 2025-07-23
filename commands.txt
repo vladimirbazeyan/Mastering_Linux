@@ -95,3 +95,92 @@ renice -n 19 [procces id]
 pgrep firefox
 #
 pgrep -f firefox # shows sub processes
+
+
+#Signalls
+#SIGHUP signalls
+kill -9 <process iod>
+
+SIGTERM #tell process to be terminated
+
+examples 
+	kill [process ID]
+	kill -s SIGTERM [Process ID]
+	kill -s 15 [process id]
+
+
+
+SIGINT #SIGNAL INTERAPTS
+
+
+
+#SIGKILL it is handle by kernell
+
+kill -s SIGKILL [Process ID]
+kill -9 [Process ID]
+kill -s 9 [Process ID]
+
+
+#SIGHUP programm hould reload its configuration
+kill -s SIGHUP [process id]
+
+
+#SIGSTOP it is like paused not terminated
+
+kill -s SIGSTOP [process id] #Stop Programm
+	
+kill -s SIGCONT [process id] #continue programm
+
+
+#killall kills all process and subprocesses
+killlall firefox
+
+
+
+
+##
+#last exit code status
+#if 0 programm has been closed without errors, if other then 0 the programm has been closed with error
+$? 
+
+
+
+
+#nohup
+nohup is for backgrounding, it doesnt sent any signall to parrent process to terminate or kill
+
+#PROCESS STATES
+(S) sleepin
+(D) uninterrptible sleep (when kernel handling to open file for process
+(R) Running 
+(T) Traced or stopped (may be stopped by kill SIGSTOP [process ID]
+(Z) Zombie (when process is closed and has no parrent , doesnt consuming any resources memory or cpu, 
+
+
+#VIEW SYSYTEM MONITOR
+top
+	-u [username] # Shows only processes owned by specific username
+	-d [secondS]  # set dekay between display updates in secondS		
+	-i 			  # Starts top without idle processes
+	-c 			  # Display the full command line used to start each process, instead of just the command
+
+#We can also interactivly change the output of the top programm
+	f key: 
+	#to fillter processes
+		we can press the f key to further customization
+			use arrows to move on fields
+			choose by space key then press q key to go back window
+
+		We can allsow sort by memory or other fields
+			moving by arrow to specific field and pressing s key
+	k key: 
+	#to setnd signalls to processes
+		enter [process id]
+		enter [signall (SIGKILL or SIGTERM)]
+	
+	r key:
+	#renice the process (change process priority)
+
+	z key: We can switch to color mode, and with uppercase Z key, we can configure itz
+	follow the instaraction
+	#shift+W to commit configs for further usageq
