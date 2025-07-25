@@ -191,10 +191,65 @@ top
 
 	#Job Control in bash
 #this command will execut process in background
+	&
 
 	ping -c 10 ya.ru &
 
 #if we wont to view output in terminal we can jauts redirect it to some file
 ping -c 10 ya.ru > ping.txt
 
-qaq
+
+#to stop a  job pres ctr+Z keys to stop
+	ctrl+z 
+
+# to view jobs enter
+	jobs
+
+fg # for forground
+bg # for back ground
+ exmaple
+	1) ping -c 100 yandex.ru > /dev/null 
+	2) ctrl+Z
+	3) jobs
+
+	#continue  a job in  forground
+	fg % [job-ID]
+	#continue a job in a background
+	bg [job-id]
+
+#terminate job by kill command
+
+#killing the job
+kill -s SIGKILL %[job_ID]
+
+#kill by terminate
+kill %[job-ID]
+
+#stty is a bash OPTION
+#with stty we can start background job untill its creat any output
+# -tostop it is will ignor stoping by any output
+#Stop jobs with output: stty
+example	
+	stty tostop
+	ping -c 100 google.com &
+	jobs
+
+
+
+#Waiting for jobs: Waiting
+#with wait we can wait for background jobs
+	wait
+	wait 123
+	wait %1
+
+	#waits for any job to be completed
+	wait -n
+example 
+	wait; echo "background jobs has been finished"
+
+
+
+#Keep a programm running: nohup
+	#We can use nohub command, to lunch a program that will remain open even if we close our terminal	
+	nohup ping -c 100 google.com &
+	#the standard output will be redirected to nohup.out
