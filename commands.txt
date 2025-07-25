@@ -184,3 +184,17 @@ top
 	z key: We can switch to color mode, and with uppercase Z key, we can configure itz
 	follow the instaraction
 	#shift+W to commit configs for further usageq
+
+
+
+
+
+	#Job Control in bash
+#this command will execut process in background
+
+	ping -c 10 ya.ru &
+
+#if we wont to view output in terminal we can jauts redirect it to some file
+ping -c 10 ya.ru > ping.txt
+
+qaq
