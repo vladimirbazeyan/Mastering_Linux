@@ -1,3 +1,6 @@
 qaq.txt
 tocken.txt
 
+git rm --cached -r -- .env 2>/dev/null || true
+git add -A
+git commit -m "Remove secrets and add .gitignore"
