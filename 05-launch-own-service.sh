@@ -108,3 +108,5 @@ echo 'my-message' | systemd-cat -t 'Vladimir' # -t is an identifire
 #to filter log by 
 
 journalctl -t 'Vladimir'
+
+#Commment
